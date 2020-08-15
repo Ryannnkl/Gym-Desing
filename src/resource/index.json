@@ -1,0 +1,38 @@
+[
+  {
+    "path": "../../../assets/icons/arms.png",
+    "name": "Arms"
+  },
+  {
+    "path": "../../../assets/icons/abs.png",
+    "name": "Abs"
+  },
+  {
+    "path": "../../../assets/icons/back.png",
+    "name": "Back"
+  },
+  {
+    "path": "../../../assets/icons/chest.png",
+    "name": "Chest"
+  },
+  {
+    "path": "../../../assets/icons/thigh.png",
+    "name": "Thigh"
+  },
+  {
+    "path": "../../../assets/icons/legs.png",
+    "name": "Legs"
+  },
+  {
+    "path": "../../../assets/icons/shoulder.png",
+    "name": "Shoulder"
+  },
+  {
+    "path": "../../../assets/icons/rear.png",
+    "name": "Rear"
+  },
+  {
+    "path": "../../../assets/icons/triceps.png",
+    "name": "Triceps"
+  }
+]
