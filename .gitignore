@@ -9,5 +9,7 @@ npm-debug.*
 *.orig.*
 web-build/
 
+babel.config.js
+
 # macOS
 .DS_Store

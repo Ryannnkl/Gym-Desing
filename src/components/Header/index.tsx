@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Alert } from "react-native";
+import { Alert } from "react-native";
 import { BorderlessButton } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
 
@@ -17,11 +17,29 @@ const Header: React.FC<IHeaderProps> = ({ title, icon, children }) => {
   return (
     <Container>
       <HeaderTop>
-        <BorderlessButton onPress={() => Alert.alert("em testes")}>
-          <Feather name={icon.name} size={24} color={icon.color} />
+        <BorderlessButton
+          style={{
+            width: 32,
+            height: 32,
+            borderRadius: 16,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          onPress={() => Alert.alert("em testes")}
+        >
+          <Feather name={icon.name} size={26} color={icon.color} />
         </BorderlessButton>
-        <BorderlessButton>
-          <Feather name="command" size={24} color={icon.color} />
+        <BorderlessButton
+          style={{
+            width: 32,
+            height: 32,
+            borderRadius: 16,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          onPress={() => Alert.alert("não sei pra que serve")}
+        >
+          <Feather name="command" size={26} color={icon.color} />
         </BorderlessButton>
       </HeaderTop>
       <HeaderContent>
