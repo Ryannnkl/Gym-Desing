@@ -5,27 +5,20 @@ import Header from "../../components/Header";
 
 import {
   Container,
+  CardIcon,
+  CardItem,
+  CardText,
   SearchContent,
   SearchItem,
   SearchText,
-  CardItem,
-  CardIcon,
-  CardText,
 } from "./styles";
 
-const data = require("../../resource/index.json");
-
-import { images } from "../../resource/images";
-
-interface IListData {
-  path: string;
-  name: string;
-  _id: string;
-}
+import { images, data } from "../../resource";
+import { useNavigation } from "@react-navigation/native";
 
 const Home: React.FC = () => {
   const [selected, setSelected] = useState([true, false, false]);
-
+  const navigation = useNavigation();
   const select = {
     backgroundColor: "#ff9942",
     color: "#FFF",
@@ -74,15 +67,13 @@ const Home: React.FC = () => {
             justifyContent: "center",
           }}
           numColumns={2}
-          keyExtractor={(item: IListData) => item._id}
+          keyExtractor={(item) => item._id}
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
             <CardItem
               key={item._id}
               style={{ shadowOpacity: 0 }}
-              onPress={() =>
-                Alert.alert("Testes", "devera navegar oara os exercicios")
-              }
+              onPress={() => navigation.navigate("Exercise")}
             >
               <CardIcon source={images[item.name.toLowerCase()]} />
               <CardText>{item.name}</CardText>

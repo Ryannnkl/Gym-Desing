@@ -19,3 +19,42 @@ export const images = {
   rear,
   triceps,
 };
+
+export const data = [
+  {
+    name: "Arms",
+    _id: "i1",
+  },
+  {
+    name: "Abs",
+    _id: "i2",
+  },
+  {
+    name: "Back",
+    _id: "i3",
+  },
+  {
+    name: "Chest",
+    _id: "i4",
+  },
+  {
+    name: "Thigh",
+    _id: "i5",
+  },
+  {
+    name: "Legs",
+    _id: "i6",
+  },
+  {
+    name: "Shoulder",
+    _id: "i7",
+  },
+  {
+    name: "Rear",
+    _id: "i8",
+  },
+  {
+    name: "Triceps",
+    _id: "i9",
+  },
+];

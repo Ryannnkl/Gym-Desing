@@ -43,7 +43,7 @@ const Header: React.FC<IHeaderProps> = ({ title, icon, children }) => {
         </BorderlessButton>
       </HeaderTop>
       <HeaderContent>
-        <HeaderText>{title}</HeaderText>
+        <HeaderText style={{ color: icon.color }}>{title}</HeaderText>
       </HeaderContent>
       {children}
     </Container>
