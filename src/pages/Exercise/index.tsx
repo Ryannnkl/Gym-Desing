@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View } from "react-native";
 import { useRoute } from "@react-navigation/native";
+import { Feather } from "@expo/vector-icons";
 
 import {
   Container,
@@ -19,8 +20,13 @@ import {
 import Header from "../../components/Header";
 
 const Exercise: React.FC = () => {
-  const [data, setData] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-  const route = useRoute();
+  const [data, setData] = useState([]);
+  const { params } = useRoute();
+
+  useEffect(() => {
+    const json = requre(`../../resources/${params.arq}`);
+    setData(json);
+  }, []);
 
   function renderListGymJobs(item: any, index: number) {
     if (item % 3 === 0) {
@@ -41,10 +47,16 @@ const Exercise: React.FC = () => {
             <CounterText>{index + 1}.</CounterText>
           </CounterContainer>
           <ContentTextContainer>
-            <ContentJobText>V-sit</ContentJobText>
-            <ContentJobSeries>30 Sec</ContentJobSeries>
+            <ContentJobText>{item.job}</ContentJobText>
+            <ContentJobSeries>{item.series}</ContentJobSeries>
           </ContentTextContainer>
-          <ContentMarkButton></ContentMarkButton>
+          <ContentMarkButton style={{ opacity: 0.5 }}>
+            <Feather
+              name={item.selected ? "check-circle" : "circle"}
+              size={30}
+              color={item.selected ? "#90ff64" : "#777"}
+            />
+          </ContentMarkButton>
         </ContentItem>
       );
     }

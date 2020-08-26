@@ -23,38 +23,47 @@ export const images = {
 export const data = [
   {
     name: "Arms",
-    _id: "i1",
+    selected: false,
+    _id: "i1"
   },
   {
     name: "Abs",
-    _id: "i2",
+    selected: false,
+    _id: "i2"
   },
   {
     name: "Back",
-    _id: "i3",
+    selected: false,
+    _id: "i3"
   },
   {
     name: "Chest",
-    _id: "i4",
+    selected: false,
+    _id: "i4"
   },
   {
     name: "Thigh",
-    _id: "i5",
+    selected: false,
+    _id: "i5"
   },
   {
     name: "Legs",
-    _id: "i6",
+    selected: false,
+    _id: "i6"
   },
   {
     name: "Shoulder",
-    _id: "i7",
+    selected: false,
+    _id: "i7"
   },
   {
     name: "Rear",
-    _id: "i8",
+    selected: false,
+    _id: "i8"
   },
   {
     name: "Triceps",
-    _id: "i9",
+    selected: false,
+    _id: "i9"
   },
 ];
