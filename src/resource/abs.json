@@ -10,9 +10,7 @@
     "series": "3x12"
   },
   {
-    "job": "Supino",
-    "selected": false,
-    "series": "3x12"
+    "rescue": true
   },
   {
     "job": "Supino",
@@ -25,6 +23,9 @@
     "series": "3x12"
   },
   {
+    "rescue": true
+  },
+  {
     "job": "Supino",
     "selected": false,
     "series": "3x12"
@@ -33,6 +34,22 @@
     "job": "Supino",
     "selected": false,
     "series": "3x12"
+  },
+  {
+    "rescue": true
+  },
+  {
+    "job": "Supino",
+    "selected": false,
+    "series": "3x12"
+  },
+  {
+    "job": "Supino",
+    "selected": false,
+    "series": "3x12"
+  },
+  {
+    "rescue": true
   },
   {
     "job": "Supino",

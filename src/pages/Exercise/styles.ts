@@ -6,7 +6,9 @@ export const Container = styled.View`
   justify-content: center;
 `;
 
-export const ContentWork = styled.ScrollView`
+export const ContentWork = styled.ScrollView.attrs({
+  showsVerticalScrollIndicator: false,
+})`
   flex: 1;
   min-width: 90%;
   background-color: #fff;
@@ -54,7 +56,7 @@ export const RestContent = styled.View`
   flex: 5;
   align-items: flex-start;
   justify-content: center;
-  padding-left: 15px;
+  padding-left: 20px;
   background-color: #f9f9f9;
 `;
 
@@ -68,5 +70,5 @@ export const ContentMarkButton = styled.TouchableOpacity`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: #00f;
+  background-color: #f3f3f350;
 `;

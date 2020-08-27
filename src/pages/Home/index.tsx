@@ -74,7 +74,9 @@ const Home: React.FC = () => {
               key={item._id}
               style={{ shadowOpacity: 0 }}
               onPress={() =>
-                navigation.navigate("Exercise", { arq: item.name })
+                navigation.navigate("Exercise", {
+                  arq: "../../resource/abs.json",
+                })
               }
             >
               <CardIcon source={images[item.name.toLowerCase()]} />

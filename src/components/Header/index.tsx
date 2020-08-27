@@ -1,6 +1,7 @@
 import React from "react";
 import { Alert } from "react-native";
 import { BorderlessButton } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
 
 interface IHeaderProps {
@@ -14,6 +15,8 @@ interface IHeaderProps {
 import { Container, HeaderTop, HeaderContent, HeaderText } from "./styles";
 
 const Header: React.FC<IHeaderProps> = ({ title, icon, children }) => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <HeaderTop>
@@ -25,7 +28,11 @@ const Header: React.FC<IHeaderProps> = ({ title, icon, children }) => {
             alignItems: "center",
             justifyContent: "center",
           }}
-          onPress={() => Alert.alert("em testes")}
+          onPress={() =>
+            icon.name == "activity"
+              ? Alert.alert("em testes", "asjdhsah")
+              : navigation.goBack()
+          }
         >
           <Feather name={icon.name} size={26} color={icon.color} />
         </BorderlessButton>

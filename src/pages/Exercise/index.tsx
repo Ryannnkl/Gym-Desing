@@ -24,53 +24,53 @@ const Exercise: React.FC = () => {
   const { params } = useRoute();
 
   useEffect(() => {
-    const json = requre(`../../resources/${params.arq}`);
+    const json = require("../../resource/abs.json");
     setData(json);
   }, []);
-
-  function renderListGymJobs(item: any, index: number) {
-    if (item % 3 === 0) {
-      return (
-        <ContentItem>
-          <CounterContainer>
-            <CounterText>{index + 1}.</CounterText>
-          </CounterContainer>
-          <RestContent>
-            <RestMessage>REST</RestMessage>
-          </RestContent>
-        </ContentItem>
-      );
-    } else {
-      return (
-        <ContentItem>
-          <CounterContainer>
-            <CounterText>{index + 1}.</CounterText>
-          </CounterContainer>
-          <ContentTextContainer>
-            <ContentJobText>{item.job}</ContentJobText>
-            <ContentJobSeries>{item.series}</ContentJobSeries>
-          </ContentTextContainer>
-          <ContentMarkButton style={{ opacity: 0.5 }}>
-            <Feather
-              name={item.selected ? "check-circle" : "circle"}
-              size={30}
-              color={item.selected ? "#90ff64" : "#777"}
-            />
-          </ContentMarkButton>
-        </ContentItem>
-      );
-    }
-  }
 
   return (
     <Container>
       <Header
         title="Today's Workout"
-        icon={{ name: "arrow-back", color: "#333" }}
+        icon={{ name: "arrow-left", color: "#333" }}
       />
+
       <ContentWork>
         {data.map((item, index) => (
-          <View key={index}>{renderListGymJobs(item, index)}</View>
+          <View key={index}>
+            {item.rescue && (
+              <ContentItem>
+                <CounterContainer>
+                  <CounterText>{index + 1}.</CounterText>
+                </CounterContainer>
+                <RestContent>
+                  <RestMessage>REST</RestMessage>
+                </RestContent>
+              </ContentItem>
+            )}
+            {item.job && (
+              <ContentItem>
+                <CounterContainer>
+                  <CounterText>{index + 1}.</CounterText>
+                </CounterContainer>
+                <ContentTextContainer>
+                  <ContentJobText>{item.job}</ContentJobText>
+                  <ContentJobSeries>{item.series}</ContentJobSeries>
+                </ContentTextContainer>
+                <ContentMarkButton
+                  onPress={() => {
+                    setData([...data, (item.selected = !item.selected)]);
+                  }}
+                >
+                  <Feather
+                    name={item.selected ? "check-circle" : "circle"}
+                    size={30}
+                    color={item.selected ? "#90ff64" : "#777"}
+                  />
+                </ContentMarkButton>
+              </ContentItem>
+            )}
+          </View>
         ))}
       </ContentWork>
     </Container>
